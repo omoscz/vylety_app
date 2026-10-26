@@ -144,6 +144,7 @@ with tab_akce:
     rozsah = st.date_input(
         "📅 Termín (jeden den nebo rozsah)",
         value=(dnes, dnes + datetime.timedelta(days=7)),
+        format="DD.MM.YYYY",
         key="akce_datum",
     )
 
