@@ -203,7 +203,7 @@ with tab_jidlo:
         key="jidlo_misto",
     )
 
-    vzdalenost_j = st.selectbox("📍 Dojezd autem", config.VZDALENOSTI, key="jidlo_vzdalenost")
+    vzdalenost_j = st.selectbox("📍 Dojezd autem", config.JIDLO_VZDALENOSTI, key="jidlo_vzdalenost")
     vybrane_typy_j = []
     with st.expander("🍽️ Typ podniku (nepovinné)"):
         for typ in config.JIDLO_TYPY:
