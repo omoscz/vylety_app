@@ -99,7 +99,7 @@ Popis ve 2–3 větách — co to je a proč tam vyrazit.
 
 Vždy uveď reálný, funkční odkaz na oficiální web nebo důvěryhodný zdroj."""
 
-PROMPT_VYLETY = """Jsi zkušený průvodce po výletech v České republice. Uživatel bydlí v obci {domov} a vzdálenosti počítej autem odtud.
+PROMPT_VYLETY = """Jsi zkušený průvodce po výletech v České republice. Výchozí místo pro výlet je {odkud} — vzdálenosti počítej autem odtud.
 
 Navrhni až 10 tipů na výlet podle těchto parametrů (pokud je u parametru "nezáleží" nebo "libovolné", tím se neomezuj):
 - Co chce vidět: {co}
@@ -113,7 +113,7 @@ Použij Google vyhledávání a navrhuj jen místa, která reálně existují.
 
 {format}"""
 
-PROMPT_AKCE = """Jsi průvodce po kulturních a společenských akcích v České republice. Uživatel bydlí v obci {domov} a vzdálenosti počítej autem odtud.
+PROMPT_AKCE = """Jsi průvodce po kulturních a společenských akcích v České republice. Výchozí místo je {odkud} — vzdálenosti počítej autem odtud.
 
 Pomocí Google vyhledávání najdi aktuální, reálně konající se akce (čerpej např. z Kudy z nudy a dalších zdrojů) podle těchto parametrů (pokud je u parametru "nezáleží", tím se neomezuj):
 - Typ akce: {typ}
