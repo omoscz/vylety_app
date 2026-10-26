@@ -62,10 +62,26 @@ def ziskej_zdroje(response):
     return unikatni
 
 
+def uprav_formatovani(text):
+    # Zajistí vlastní odstavec pro shrnutí, popis i odkaz bez ohledu na to,
+    # jak text naformátuje AI (jednotlivá zalomení Markdown jinak slévá).
+    souhrn = ("📍", "📅", "🍽️")
+    vystup = []
+    for radek in text.split("\n"):
+        holy = radek.lstrip()
+        if holy.startswith(souhrn) or holy.startswith("🔗") or holy.startswith("#"):
+            if vystup and vystup[-1].strip() != "":
+                vystup.append("")
+        vystup.append(radek)
+        if holy.startswith(souhrn):
+            vystup.append("")
+    return "\n".join(vystup)
+
+
 def zobraz_vysledek(vysledek):
     if not vysledek:
         return
-    st.markdown(vysledek["text"])
+    st.markdown(uprav_formatovani(vysledek["text"]))
     if vysledek["zdroje"]:
         with st.expander("🔗 Ověřené zdroje z vyhledávání"):
             for titul, url in vysledek["zdroje"]:
