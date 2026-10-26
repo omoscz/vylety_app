@@ -30,7 +30,7 @@ def generuj_z_ai(prompt):
                 st.error("⚠️ API klíč je neplatný. Zkontroluj nastavení Secrets.")
                 return None
             else:
-                st.warning(f"⚠️ Přepínám na záložní model... [{e.code}]")
+                st.warning(f"🔍 DEBUG — model {model} selhal [{e.code}]: {e}")
 
     st.error("❌ Všechny modely selhaly. Zkus to prosím za chvíli.")
     return None
