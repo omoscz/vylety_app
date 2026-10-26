@@ -65,6 +65,14 @@ AKCE_TYPY = [
     "Workshop / dílny",
 ]
 
+JIDLO_VZDALENOSTI = [
+    "Nezáleží",
+    "do 5 minut",
+    "do 10 minut",
+    "do 15 minut",
+    "15–30 minut",
+]
+
 JIDLO_TYPY = [
     "Česká",
     "Pizzerie / italská",
