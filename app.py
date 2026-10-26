@@ -12,6 +12,9 @@ st.set_page_config(page_title="Výlety App", page_icon="🏞️", layout="center
 
 MODELY = ["gemini-3.5-flash-lite", "gemini-3.8-flash"]
 
+# DOČASNĚ vypnuto pro diagnostiku kvóty — grounding (vyhledávání) zapneme zpět po testu
+POUZIT_GROUNDING = False
+
 
 def generuj_z_ai(prompt):
     if "GEMINI_KEY" not in st.secrets:
@@ -19,9 +22,11 @@ def generuj_z_ai(prompt):
         return None
 
     klient = genai.Client(api_key=st.secrets["GEMINI_KEY"])
-    nastaveni = types.GenerateContentConfig(
-        tools=[types.Tool(google_search=types.GoogleSearch())]
-    )
+    nastaveni = None
+    if POUZIT_GROUNDING:
+        nastaveni = types.GenerateContentConfig(
+            tools=[types.Tool(google_search=types.GoogleSearch())]
+        )
     for model in MODELY:
         try:
             return klient.models.generate_content(model=model, contents=prompt, config=nastaveni)
