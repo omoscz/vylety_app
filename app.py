@@ -106,6 +106,7 @@ with tab_vylety:
             if st.checkbox(co, key=f"vylet_co_{co}"):
                 vybrane_co.append(co)
 
+    odkud = st.text_input("📍 Odkud pojedeš?", value="Dolní Pohleď", key="vylet_odkud")
     vzdalenost = st.selectbox("📍 Dojezd autem", config.VZDALENOSTI, key="vylet_vzdalenost")
     pro_koho = st.selectbox("👥 Pro koho", config.PRO_KOHO, key="vylet_prokoho")
     narocnost = st.selectbox("💪 Náročnost", config.NAROCNOST, key="vylet_narocnost")
@@ -115,7 +116,7 @@ with tab_vylety:
     if st.button("🚀 Navrhnout výlety", type="primary", key="btn_vylety"):
         with st.spinner("Hledám tipy na výlety..."):
             prompt = config.PROMPT_VYLETY.format(
-                domov=config.DOMOV,
+                odkud=odkud.strip() or config.DOMOV,
                 co=vyber_seznam(vybrane_co),
                 vzdalenost=vzdalenost,
                 pro_koho=pro_koho,
@@ -146,6 +147,7 @@ with tab_akce:
         key="akce_datum",
     )
 
+    odkud_a = st.text_input("📍 Odkud pojedeš?", value="Dolní Pohleď", key="akce_odkud")
     vzdalenost_a = st.selectbox("📍 Dojezd autem", config.VZDALENOSTI, key="akce_vzdalenost")
     pro_koho_a = st.selectbox("👥 Pro koho", config.PRO_KOHO, key="akce_prokoho")
     kde_a = st.selectbox("🌦️ Kde", config.KDE, key="akce_kde")
@@ -154,7 +156,7 @@ with tab_akce:
     if st.button("🚀 Najít akce", type="primary", key="btn_akce"):
         with st.spinner("Hledám aktuální akce..."):
             prompt = config.PROMPT_AKCE.format(
-                domov=config.DOMOV,
+                odkud=odkud_a.strip() or config.DOMOV,
                 typ=vyber_seznam(vybrane_typy),
                 datum=formatuj_datum(rozsah),
                 vzdalenost=vzdalenost_a,
