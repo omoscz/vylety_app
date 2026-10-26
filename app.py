@@ -10,7 +10,7 @@ import config
 st.set_page_config(page_title="Výlety App", page_icon="🏞️", layout="centered")
 
 
-MODELY = ["gemini-2.5-flash-lite", "gemini-2.5-flash"]
+MODELY = ["gemini-3.5-flash-lite", "gemini-3.8-flash"]
 
 
 def generuj_z_ai(prompt):
