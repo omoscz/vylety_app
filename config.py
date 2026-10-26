@@ -90,11 +90,14 @@ JIDLO_CENA = [
 ]
 
 # Společný formát výstupu (Markdown) používaný ve všech promptech
-_FORMAT_VYLET = """Každý tip napiš přesně v tomto formátu (Markdown), oddělený prázdným řádkem:
+_FORMAT_VYLET = """Každý tip napiš přesně v tomto formátu (Markdown). Mezi každou část (nadpis, shrnutí, popis, odkaz) vlož PRÁZDNÝ ŘÁDEK:
 
 ### Název místa
+
 📍 přibližný dojezd autem · 🏷️ typ · 👥 pro koho · 🎟️ vstupné
+
 Popis ve 2–3 větách — co to je a proč tam vyrazit.
+
 🔗 [Odkaz](https://...)
 
 Vždy uveď reálný, funkční odkaz na oficiální web nebo důvěryhodný zdroj."""
@@ -125,11 +128,14 @@ Pomocí Google vyhledávání najdi aktuální, reálně konající se akce (če
 
 Uváděj POUZE reálné a ověřené akce konající se v daném termínu. Raději navrhni méně tipů než vymyslet neexistující akci. Pokud nic nenajdeš, napiš to.
 
-Každou akci napiš přesně v tomto formátu (Markdown), oddělenou prázdným řádkem:
+Každou akci napiš přesně v tomto formátu (Markdown). Mezi každou část (nadpis, shrnutí, popis, odkaz) vlož PRÁZDNÝ ŘÁDEK:
 
 ### Název akce
+
 📅 datum · 🏷️ typ · 📍 přibližný dojezd autem · 🎟️ vstupné
+
 Popis ve 2–3 větách — o co jde.
+
 🔗 [Odkaz](https://...)
 
 Vždy uveď reálný, funkční odkaz na stránku akce."""
@@ -153,11 +159,14 @@ Pomocí Google vyhledávání najdi reálné podniky v daném místě nebo po tr
 
 Navrhuj jen podniky, které reálně existují.
 
-Každý podnik napiš přesně v tomto formátu (Markdown), oddělený prázdným řádkem:
+Každý podnik napiš přesně v tomto formátu (Markdown). Mezi každou část (nadpis, shrnutí, popis, odkaz) vlož PRÁZDNÝ ŘÁDEK:
 
 ### Název podniku
+
 🍽️ typ kuchyně · 📍 místo / dojezd · 💰 cena
+
 Popis ve 2–3 větách — čím je podnik dobrý.
+
 🔗 [Odkaz](https://...)
 
 Vždy uveď reálný, funkční odkaz (web podniku, menu nebo mapy)."""
